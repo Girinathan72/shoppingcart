@@ -1,0 +1,16 @@
+# PHP files (backend only)
+api.php
+config.php
+database.sql
+
+# Dependencies
+node_modules/
+.env
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+*.swp
