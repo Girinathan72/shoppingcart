@@ -3,69 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Contact - Fresh Mart</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-        }
-
-        /* Header */
-        header {
-            background-color: #2e8b57;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-
-        header h1 {
-            margin: 0;
-        }
-
-        /* Navigation */
-        .main-nav {
-            margin-top: 10px;
-        }
-
-        .main-nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 10px;
-            font-weight: bold;
-        }
-
-        .main-nav a:hover {
-            text-decoration: underline;
-        }
-
-        /* Contact section */
-        .container {
-            padding: 30px;
-        }
-
-        .contact-info {
-            background-color: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-            max-width: 600px;
-            margin: 0 auto;
-            text-align: left;
-        }
-
-        .contact-info h2 {
-            margin-top: 0;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #2e8b57;
-            color: white;
-            text-align: center;
-            padding: 12px;
-            margin-top: 30px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 <header>
@@ -74,23 +13,37 @@
         <a href="index.html">Home</a>
         <a href="products.html">Products</a>
         <a href="contact.html">Contact</a>
+        <a href="cart.html"><i class="fas fa-shopping-cart"></i> <span id="cart-badge" class="cart-badge">0</span></a>
     </nav>
 </header>
 
 <div class="container">
-    <div class="contact-info">
-        <h2>Contact Us</h2>
-        <p>We'd love to hear from you! Here are the ways to reach us:</p>
-        <ul>
-            <li>Email: <a href="mailto:s.girinathangiri787@gmail.com">s.girinathangiri787@gmail.com</a></li>
-            <li>Phone:8838540564</li>
-            <li>Address: 123 Grocery Lane, Food City, Country</li>
-        </ul>
+    <h2>Contact Us</h2>
+    <p style="text-align:center;">We'd love to hear from you! Send us a message below.</p>
+    <form class="contact-form" id="contact-form" method="post" action="api.php?action=submit_contact">
+        <label for="contact-name">Name</label>
+        <input type="text" id="contact-name" name="name" required>
+
+        <label for="contact-email">Email</label>
+        <input type="email" id="contact-email" name="email" required>
+
+        <label for="contact-msg">Message</label>
+        <textarea id="contact-msg" name="message" required></textarea>
+
+        <button type="submit">Send Message</button>
+    </form>
+
+    <div class="contact-info" style="text-align:center; margin-top:20px;">
+        <p>Email: <a href="mailto:s.girinathangiri787@gmail.com">s.girinathangiri787@gmail.com</a></p>
+        <p>Phone: 8838540564</p>
+        <p>Address: 123 Grocery Lane, Food City, Country</p>
     </div>
 </div>
 
 <footer>
-    © 2026 Online Grocery Store | Created by Girinathan
+    &copy; 2026 Online Grocery Store | Created by Girinathan
 </footer>
+
+<script src="script.js"></script>
 </body>
 </html>

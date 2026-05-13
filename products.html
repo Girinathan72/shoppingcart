@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Products - Fresh Mart</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         body {
             margin: 0;
@@ -58,6 +59,13 @@
             color: #2e8b57;
             font-weight: bold;
             cursor: pointer;
+        }
+
+        .price-tag {
+            font-weight: bold;
+            color: #2e8b57;
+            font-size: 1.1em;
+            margin: 5px 0;
         }
 
         /* Product section */
@@ -127,11 +135,12 @@
         <a href="index.html">Home</a>
         <a href="products.html">Products</a>
         <a href="contact.html">Contact</a>
+        <a href="cart.html"><i class="fas fa-shopping-cart"></i> <span id="cart-badge" class="cart-badge">0</span></a>
     </nav>
 
     <div class="search-box">
-        <input type="text" placeholder="Search products...">
-        <button>Search</button>
+        <input type="text" id="search-input" placeholder="Search products..." oninput="filterProducts()">
+        <button onclick="filterProducts()">Search</button>
     </div>
 </header>
 
@@ -143,21 +152,24 @@
             <img src="images/rice.jpeg" alt="Basmati Rice">
             <h3>Basmati Rice</h3>
             <p>Premium quality</p>
-            <button>Add to Cart</button>
+            <div class="price-tag">$3.99</div>
+            <button onclick="addToCart('Basmati Rice', 3.99)">Add to Cart</button>
         </div>
 
         <div class="product">
             <img src="images/wheat.jpeg" alt="Wheat Flour">
             <h3>Wheat Flour</h3>
             <p>Fresh atta</p>
-            <button>Add to Cart</button>
+            <div class="price-tag">$2.49</div>
+            <button onclick="addToCart('Wheat Flour', 2.49)">Add to Cart</button>
         </div>
 
         <div class="product">
             <img src="images/sugar.jpeg" alt="Sugar">
             <h3>Sugar</h3>
             <p>Pure sugar</p>
-            <button>Add to Cart</button>
+            <div class="price-tag">$1.99</div>
+            <button onclick="addToCart('Sugar', 1.99)">Add to Cart</button>
         </div>
 
         <!-- Row 2 -->
@@ -165,21 +177,24 @@
             <img src="images/oil.jpeg" alt="Cooking Oil">
             <h3>Cooking Oil</h3>
             <p>Healthy oil</p>
-            <button>Add to Cart</button>
+            <div class="price-tag">$4.99</div>
+            <button onclick="addToCart('Cooking Oil', 4.99)">Add to Cart</button>
         </div>
 
         <div class="product">
             <img src="images/salt.jpeg" alt="Salt">
             <h3>Salt</h3>
             <p>Iodized salt</p>
-            <button>Add to Cart</button>
+            <div class="price-tag">$0.99</div>
+            <button onclick="addToCart('Salt', 0.99)">Add to Cart</button>
         </div>
 
         <div class="product">
             <img src="images/honey.jpeg" alt="Honey">
             <h3>Honey</h3>
             <p>Natural honey</p>
-            <button>Add to Cart</button>
+            <div class="price-tag">$6.99</div>
+            <button onclick="addToCart('Honey', 6.99)">Add to Cart</button>
         </div>
 
     </div>
@@ -188,5 +203,6 @@
 <footer>
     © 2026 Online Grocery Store | Created by Girinathan
 </footer>
+<script src="script.js"></script>
 </body>
 </html>
